@@ -1,0 +1,16 @@
+{
+	"version": 2,
+	"builds": [
+		{
+			"src": "next.config.js",
+			"use": "@vercel/next"
+		}
+	],
+	"env": {
+		"MONGODB_URI": "@mongodb_uri",
+		"STRIPE_SECRET_KEY": "@stripe_secret_key",
+		"NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY": "@stripe_publishable_key",
+		"SENDGRID_USERNAME": "@sendgrid_username",
+		"SENDGRID_PASSWORD": "@sendgrid_password"
+	}
+}
