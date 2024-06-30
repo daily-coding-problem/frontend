@@ -66,7 +66,7 @@ This project is a full-stack application built with Next.js and Tailwind CSS.
 ├── docker-compose.yaml
 ├── .dockerignore
 ├── postcss.config.js
-├──  next-env.d.ts
+├── next-env.d.ts
 └── pnpm-lock.yaml
 ```
 
