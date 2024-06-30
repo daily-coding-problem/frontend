@@ -97,6 +97,20 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
 
+### Docker
+
+Build the Docker image.
+
+```bash
+docker compose build
+```
+
+Run the Docker container.
+
+```bash
+docker compose up
+```
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
