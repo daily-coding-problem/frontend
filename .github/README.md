@@ -13,7 +13,6 @@ An application whose goal is to provide a platform for users to solve daily codi
 
 - [Project Overview](#project-overview)
 - [Features](#features)
-- [Project Structure](#project-structure)
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
@@ -29,46 +28,6 @@ This project is a full-stack application built with Next.js and Tailwind CSS.
   - User profile
 - Daily coding problems
   - Problem Solutions (premium feature)
-
-## Project Structure
-
-```
-.
-├── components/
-│   ├── ConfettiButton.tsx
-│   ├── Layout.tsx
-├── pages/
-│   ├── api/
-│   │   ├── subscribe.ts
-│   │   ├── verify-email.ts
-│   ├── _app.tsx
-│   ├── _document.tsx
-│   ├── index.tsx
-├── public/
-├── sections/
-│   ├── curriculum/
-│   ├── faq/
-│   ├── footer/
-│   ├── header/
-│   ├── hero/
-│   ├── plans/
-│   ├── premium/
-│   ├── sample/
-├── styles/
-│   ├── global.css
-├── .env.example
-├── .gitignore
-├── package.json
-├── tailwind.config.js
-├── tsconfig.json
-├── vercel.json
-├── Dockerfile
-├── docker-compose.yaml
-├── .dockerignore
-├── postcss.config.js
-├── next-env.d.ts
-└── pnpm-lock.yaml
-```
 
 ## Installation
 

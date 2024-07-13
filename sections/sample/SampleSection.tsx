@@ -31,7 +31,7 @@ const SampleSection: React.FC = () => {
 							width="100%"
 							height="700"
 							className="card shadow-lg rounded-lg my-5"
-							src="/"
+							src={`${process.env.MAIL_SERVICE}/api/v1/mail/problem/random`}
 						></iframe>
 					</div>
 				</div>
