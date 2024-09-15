@@ -11,9 +11,16 @@ interface ConfettiButtonProps {
 	onClick: () => void;
 }
 
-const ConfettiButton: React.FC<ConfettiButtonProps> = ({ text, loadingText, isLoading, disabled, showConfetti, onClick }) => {
+const ConfettiButton: React.FC<ConfettiButtonProps> = ({
+														   text,
+														   loadingText,
+														   isLoading,
+														   disabled,
+														   showConfetti,
+														   onClick,
+													   }) => {
 	const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
-	const [isConfettiVisible, setIsConfettiVisible] = useState(false);
+	const [runConfetti, setRunConfetti] = useState(false); // Control whether confetti is running
 
 	const detectWindowSize = useCallback(() => {
 		setWindowSize({ width: window.innerWidth, height: window.innerHeight });
@@ -30,10 +37,13 @@ const ConfettiButton: React.FC<ConfettiButtonProps> = ({ text, loadingText, isLo
 
 	useEffect(() => {
 		if (showConfetti) {
-			setIsConfettiVisible(true);
-			setTimeout(() => setIsConfettiVisible(false), 3000); // Confetti visible for 3 seconds
+			setRunConfetti(true); // Start confetti
 		}
 	}, [showConfetti]);
+
+	const stopConfetti = () => {
+		setRunConfetti(false); // Stop confetti when pieces have fallen
+	};
 
 	return (
 		<>
@@ -68,13 +78,15 @@ const ConfettiButton: React.FC<ConfettiButtonProps> = ({ text, loadingText, isLo
 			</button>
 
 			{/* Confetti effect */}
-			{isConfettiVisible &&
+			{runConfetti &&
 				ReactDOM.createPortal(
 					<Confetti
 						width={windowSize.width}
 						height={windowSize.height}
 						recycle={false}
 						numberOfPieces={150}
+						run={runConfetti} // Control confetti run
+						onConfettiComplete={stopConfetti} // Stop confetti when done
 						style={{ zIndex: 9999, position: 'fixed', top: 0 }}
 					/>,
 					document.body
