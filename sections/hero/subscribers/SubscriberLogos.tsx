@@ -14,6 +14,16 @@ const logos = [
 	'microsoft',
 	'airbnb',
 	'linkedin',
+	'netflix',
+	'oracle',
+	'facebook',
+	'instagram',
+	'twitch',
+	'youtube',
+	'spacex',
+	'1password',
+	'ebay',
+	'ibm',
 ]
 
 const SubscriberLogos: React.FC = () => {
