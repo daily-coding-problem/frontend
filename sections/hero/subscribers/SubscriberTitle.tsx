@@ -2,8 +2,8 @@ import * as React from 'react';
 
 const SubscriberTitle: React.FC = () => {
 	return (
-		<h1 className="text-4xl font-black py-2 md:py-10 text-center uppercase">
-			Our subscribers work at
+		<h1 className="text-center font-display font-medium text-gray-500 sm:text-lg">
+			Our subscribers now work at these great companies
 		</h1>
 	);
 };

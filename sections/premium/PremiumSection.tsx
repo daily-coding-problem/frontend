@@ -29,11 +29,14 @@ const PremiumSection: React.FC = () => {
 							<button
 								className="w-full rounded-md bg-indigo-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
 								onClick={() => {
-									window.location.href = '#plans';
+									document.querySelector('#plans')?.scrollIntoView({
+										behavior: 'smooth'
+									});
 								}}
 							>
 								Subscribe now
 							</button>
+
 						</div>
 					</div>
 				</div>

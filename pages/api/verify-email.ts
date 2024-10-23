@@ -1,11 +1,8 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-	if (req.method !== 'POST') {
-		return res.status(405).json({ message: 'Method not allowed' });
-	}
-
-	const { email } = req.body;
+export async function POST(req: NextRequest) {
+	const { email } = await req.json();
 
 	let ip;
 	if (process.env.NODE_ENV !== 'production') {
@@ -52,7 +49,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
 		if (!testEmails.includes(email)) {
 			console.error(`Email ${email} is not a valid test email`);
-			return res.status(400).json({ isValid: false });
+			return NextResponse.json({ isValid: false }, { status: 400 });
 		}
 	}
 
@@ -63,13 +60,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 		const isValid = data.status === 'valid' && data.sub_status !== 'disposable';
 
 		if (isValid) {
-			console.log(`Email ${email} is valid`)
-			res.status(200).json({ isValid: true });
+			console.log(`Email ${email} is valid`);
+			return NextResponse.json({ isValid: true });
 		} else {
-			console.error(`Email ${email} is invalid`)
-			res.status(400).json({ isValid: false });
+			console.error(`Email ${email} is invalid`);
+			return NextResponse.json({ isValid: false }, { status: 400 });
 		}
 	} catch (error) {
-		res.status(500).json({ message: 'Error verifying email' });
+		console.error('Error verifying email:', error);
+		return NextResponse.json({ message: 'Error verifying email' }, { status: 500 });
 	}
 }

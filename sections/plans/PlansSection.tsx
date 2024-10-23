@@ -1,5 +1,3 @@
-// components/PlansSection.tsx
-
 import * as React from 'react';
 import DoneIcon from '@mui/icons-material/Done';
 import EastIcon from '@mui/icons-material/East';
@@ -43,9 +41,8 @@ const PlansSection: React.FC = () => {
 									`Save over <strong class="text-white">50%</strong>`,
 									`<strong class="text-white">Renews</strong> automatically`,
 									`<strong class="text-white">Cancel</strong> anytime`,
-									`<strong class="text-white">No</strong> ads`,
 								]}
-								onClick={() => { /* Your onClick handler */
+								onClick={() => {
 								}}
 								saleText="Sale 50% off"
 							/>
@@ -58,9 +55,8 @@ const PlansSection: React.FC = () => {
 									`<strong class="text-black">Full</strong> solution the next day`,
 									`<strong class="text-black">Renews</strong> automatically`,
 									`<strong class="text-black">Cancel</strong> anytime`,
-									`<strong class="text-black">No</strong> ads`,
 								]}
-								onClick={() => { /* Your onClick handler */
+								onClick={() => {
 								}}
 							/>
 						</div>

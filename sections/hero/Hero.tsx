@@ -11,7 +11,9 @@ const Hero: React.FC = () => (
 				<FormContainer />
 			</div>
 		</div>
-		<SubscriberSection />
+		<div className="mt-10 bg-gray-50 w-full">
+			<SubscriberSection />
+		</div>
 	</section>
 );
 

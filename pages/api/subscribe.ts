@@ -1,11 +1,8 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-	if (req.method !== 'POST') {
-		return res.status(405).end();
-	}
-
-	const { email, timeZone }: { email: string; timeZone: string } = req.body;
+export async function POST(req: NextRequest) {
+	const { email, timeZone }: { email: string; timeZone: string } = await req.json();
 
 	try {
 		console.info(`User subscribed: ${email}`);
@@ -17,20 +14,19 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 			},
 			body: JSON.stringify({
 				email,
-				timeZone
+				timeZone,
 			}),
 		});
 
 		if (!response.ok) {
 			const errorText = await response.text();
 			console.error(`Failed to save user: ${errorText}`);
-			return res.status(response.status).json({ error: errorText });
+			return NextResponse.json({ error: errorText }, { status: response.status });
 		}
 
-		res.json({ success: true });
+		return NextResponse.json({ success: true });
 	} catch (error) {
 		console.error(`Error processing subscription: ${(error as Error).message}`);
-		res.status(500).json({ error: (error as Error).message });
+		return NextResponse.json({ error: (error as Error).message }, { status: 500 });
 	}
 }
-

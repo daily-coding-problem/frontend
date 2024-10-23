@@ -28,13 +28,20 @@ const FormContainer: React.FC = () => {
 						<SubscriberForm onSuccess={handleSubscribeSuccess} formValues={formValues} />
 						{isSubscribed && <SuccessModal onClose={handleModalClose} />}
 						<div className="text-xs text-gray-500 pt-4">
-							Questions will always be free, if you want solutions you can always purchase a premium plan.
+							Questions will always be free; if you want solutions you can always{' '}
+							<a
+								className="underline text-blue-700 hover:text-indigo-400 transition-colors duration-500"
+								href="/premium"
+							>
+								purchase a premium plan
+							</a>
+								.
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	);
+);
 };
 
 export default FormContainer;

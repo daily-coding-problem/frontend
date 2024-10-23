@@ -4,9 +4,11 @@ import SubscriberLogos from './SubscriberLogos';
 
 const SubscriberSection: React.FC = () => {
 	return (
-		<div className="pt-6 md:pt-24 md:block hidden">
+		<div className="pt-10 md:block hidden">
 			<SubscriberTitle />
-			<SubscriberLogos />
+			<div className="max-w-3xl mx-auto px-4">
+				<SubscriberLogos />
+			</div>
 		</div>
 	);
 };

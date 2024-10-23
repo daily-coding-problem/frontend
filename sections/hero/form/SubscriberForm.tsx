@@ -1,17 +1,22 @@
 import * as React from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useState, useEffect } from 'react';
-import ConfettiButton from '../../../components/ConfettiButton';
+import { z } from 'zod';
+import ConfettiButton from '@components/ConfettiButton';
+import {verifyEmail} from "@lib/utils";
+import {toast} from "react-hot-toast";
 
 interface SubscriberFormProps {
 	onSuccess: () => void;
 	formValues: FormValues;
 }
 
-type FormValues = {
-	email: string;
-	timeZone: string;
-};
+const schema = z.object({
+	email: z.string().email('Invalid email address'),
+	timeZone: z.string(),
+});
+
+type FormValues = z.infer<typeof schema>;
 
 const SubscriberForm: React.FC<SubscriberFormProps> = ({ onSuccess, formValues }) => {
 	const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<FormValues>({
@@ -24,35 +29,14 @@ const SubscriberForm: React.FC<SubscriberFormProps> = ({ onSuccess, formValues }
 		reset(formValues);
 	}, [formValues, reset]);
 
-	const verifyEmail = async (email: string) => {
-		try {
-			const response = await fetch('/api/verify-email', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify({ email })
-			});
-
-			if (response.ok) {
-				const { isValid } = await response.json();
-				return isValid;
-			} else {
-				return false;
-			}
-		} catch (error) {
-			return false;
-		}
-	};
-
 	const onSubmit: SubmitHandler<FormValues> = async (data: FormValues) => {
 		setError('');
 		setShowConfetti(false);
 
-		// Verify email before submitting
 		const isEmailValid = await verifyEmail(data.email);
 		if (!isEmailValid) {
 			setError('Email is invalid. Please enter a valid email address.');
+			toast.error('Email is invalid. Please enter a valid email address.');
 			return;
 		}
 
@@ -76,6 +60,7 @@ const SubscriberForm: React.FC<SubscriberFormProps> = ({ onSuccess, formValues }
 			} else {
 				const { message } = await response.json();
 				setError(message);
+				toast.error(message);
 			}
 		} catch (error) {
 			setError('An error occurred. Please try again later.');

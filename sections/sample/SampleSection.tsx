@@ -1,4 +1,5 @@
 import * as React from 'react';
+import SmoothScrollLink from "@components/SmoothScrollLink";
 
 const SampleSection: React.FC = () => {
 	return (
@@ -17,10 +18,7 @@ const SampleSection: React.FC = () => {
 						Click the link to see the solution to this problem.
 					</InfoCard>
 					<InfoCard number={3} title="Solutions">
-						<a className="underline text-blue-700 hover:text-indigo-400 transition-colors duration-500"
-						   href="#plans">
-							Paying customers
-						</a>{' '}
+						<SmoothScrollLink href="#plans" text="Paying customers" />{' '}
 						will receive solutions to the prior day's question.
 					</InfoCard>
 				</div>
