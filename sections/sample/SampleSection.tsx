@@ -22,8 +22,8 @@ const SampleSection: React.FC = () => {
 						will receive solutions to the prior day's question.
 					</InfoCard>
 				</div>
-				<div className="flex flex-col-reverse md:flex-row text-left py-0 md:py-5">
-					<div className="md:mx-10 w-full flex flex-col justify-center pb-10 md:pb-0">
+				<div className="flex flex-col-reverse md:flex-row text-left justify-center py-0 md:py-5">
+					<div className="md:mx-10 w-full sm:w-[75%] flex flex-col justify-center pb-10 md:pb-0">
 						<iframe
 							id="sample-iframe"
 							width="100%"
