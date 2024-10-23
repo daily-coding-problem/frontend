@@ -86,7 +86,7 @@ const PlanCard: React.FC<PlanCardProps> = ({
 											   onClick,
 											   saleText
 										   }) => (
-	<div id={id} className={`md:w-1/2 my-4 md:my-0 p-8 text-center rounded-3xl shadow-xl ${saleText ? 'bg-gray-800 text-white border-white transform md:scale-125' : 'bg-white md:pl-16'}`}>
+	<div id={id} className={`md:w-1/2 my-4 md:my-0 p-8 text-center rounded-3xl shadow-xl ${saleText ? 'bg-gray-800 text-white border-white transform md:scale-125' : 'bg-gray-50 md:pl-16'}`}>
 		<h1 className={`pt-2 font-semibold text-2xl ${saleText ? 'text-white' : 'text-black'}`}>{title}</h1>
 		<p className="pt-2 tracking-wide line-through">
 			<span className="text-xl text-gray-500 font-semibold">${originalPrice}</span>
