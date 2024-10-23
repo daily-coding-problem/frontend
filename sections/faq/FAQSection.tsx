@@ -6,13 +6,13 @@ const faqs = [
 		question: 'What do I get as a pro subscriber?',
 		answer: (
 			<>
-				As a premium subscriber you receive:
+				<span className="block mb-1">As a premium subscriber you receive:</span>
 				<ol>
-					<li>Daily interview questions</li>
-					<li>Daily interview solutions in Python which include big-O analysis of code</li>
-					<li>Weekly emails to introduce each topic in the curriculum</li>
-					<li>Access to review past questions, solutions, and weekly intros in the portal</li>
-					<li>Ability to change the time you receive your emails</li>
+					<li>1. Daily interview questions</li>
+					<li>2. Daily interview solutions in Python which include big-O analysis of code</li>
+					<li>3. Weekly emails to introduce each topic in the curriculum</li>
+					<li>4. Access to review past questions, solutions, and weekly intros in the portal</li>
+					<li>5. Ability to change the time you receive your emails</li>
 				</ol>
 			</>
 		),
