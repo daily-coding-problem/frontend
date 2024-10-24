@@ -17,6 +17,7 @@
 		"baseUrl": ".", // Set base URL for relative paths
 		"paths": {
 			"@/*": ["*"],
+			"@styles/*": ["styles/*"],
 			"@lib/*": ["lib/*"],
 			"@hooks/*": ["hooks/*"],
 			"@components/*": ["components/*"],

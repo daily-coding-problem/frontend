@@ -2,9 +2,9 @@ import * as React from 'react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import Layout from './layout';
-import { SupabaseProvider } from '@/hooks/useSupabase'
+import { SupabaseProvider } from '@hooks/useSupabase'
 
-import '../styles/globals.css';
+import '@styles/globals.css';
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
 	return (
