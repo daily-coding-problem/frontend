@@ -24,7 +24,12 @@ const Logo: React.FC = () => (
 	</a>
 )
 
-const NavLinks: React.FC<{ isMobile?: boolean, isLoggedIn: boolean }> = ({ isMobile = false, isLoggedIn = false }) => {
+type NavLinksProps = {
+	isMobile?: boolean
+	isLoggedIn: boolean
+}
+
+const NavLinks: React.FC<NavLinksProps> = ({ isMobile = false, isLoggedIn = false }) => {
 	const baseButtonClass = isMobile ? "w-full justify-start" : ""
 
 	return (
