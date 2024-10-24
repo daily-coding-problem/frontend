@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f13babec-5b23-4cdb-ba3d-2fbac793d6b3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/hooks/useSupabase.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/git_toolbox_blame.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sections/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/sections/header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+    <list default="true" id="f13babec-5b23-4cdb-ba3d-2fbac793d6b3" name="Changes" comment="Add Supabase integration and refactor header logic&#10;&#10;Removed outdated .idea files and updated project configurations. Introduced Supabase context for authentication and modified header component to display login status. Updated the tsconfig and fixed layout import in _app.tsx.">
+      <change beforePath="$PROJECT_DIR$/pages/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,11 +88,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1729728218972</updated>
-      <workItem from="1729728220242" duration="423000" />
+      <workItem from="1729728220242" duration="1117000" />
     </task>
+    <task id="LOCAL-00001" summary="Add Supabase integration and refactor header logic&#10;&#10;Removed outdated .idea files and updated project configurations. Introduced Supabase context for authentication and modified header component to display login status. Updated the tsconfig and fixed layout import in _app.tsx.">
+      <option name="closed" value="true" />
+      <created>1729728720416</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1729728720416</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add Supabase integration and refactor header logic&#10;&#10;Removed outdated .idea files and updated project configurations. Introduced Supabase context for authentication and modified header component to display login status. Updated the tsconfig and fixed layout import in _app.tsx." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Supabase integration and refactor header logic&#10;&#10;Removed outdated .idea files and updated project configurations. Introduced Supabase context for authentication and modified header component to display login status. Updated the tsconfig and fixed layout import in _app.tsx." />
   </component>
 </project>

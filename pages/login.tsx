@@ -76,7 +76,7 @@ export function Login() {
 	}
 
 	return (
-		<div className="min-h-[85vh] flex flex-col md:flex-row bg-indigo-50">
+		<div className="min-h-[85vh] flex flex-col md:flex-row bg-gray-50">
 			{/* Left column with design */}
 			<div className="md:w-1/2 bg-gradient-to-br from-indigo-600 via-indigo-700 to-indigo-800 p-8 flex flex-col justify-center items-center text-white">
 				<div className="max-w-md text-center">
