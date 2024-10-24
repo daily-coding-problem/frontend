@@ -5,11 +5,11 @@ import { useEffect, useState } from 'react'
 import { Menu } from 'lucide-react'
 
 import { Button } from "@/components/ui/button"
-import {
-	Sheet,
-	SheetContent,
-	SheetTrigger,
-} from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { useSupabase } from '@/hooks/useSupabase'
+
+// TODO - Only show the premium button if the user is not logged in or is not a premium user
+// TODO - Show profile button if the user is logged in
 
 const Logo: React.FC = () => (
 	<a href="/" className="flex items-center space-x-2 text-xl font-semibold text-black">
@@ -24,14 +24,16 @@ const Logo: React.FC = () => (
 	</a>
 )
 
-const NavLinks: React.FC<{ isMobile?: boolean }> = ({ isMobile = false }) => {
+const NavLinks: React.FC<{ isMobile?: boolean, isLoggedIn: boolean }> = ({ isMobile = false, isLoggedIn = false }) => {
 	const baseButtonClass = isMobile ? "w-full justify-start" : ""
 
 	return (
 		<div className={`flex ${isMobile ? 'flex-col space-y-4' : 'items-center space-x-4'}`}>
-			<Button variant="outline" className={`${baseButtonClass} text-black border-gray-300 rounded-full hover:bg-indigo-100`} asChild>
-				<a href="/login">Sign In</a>
-			</Button>
+			{!isLoggedIn && (
+				<Button variant="outline" className={`${baseButtonClass} text-black border-gray-300 rounded-full hover:bg-indigo-100`} asChild>
+					<a href="/login">Sign In</a>
+				</Button>
+			)}
 			<Button className={`${baseButtonClass} bg-indigo-600 text-white hover:bg-indigo-700`} asChild>
 				<a href="/premium">Get Premium</a>
 			</Button>
@@ -40,6 +42,7 @@ const NavLinks: React.FC<{ isMobile?: boolean }> = ({ isMobile = false }) => {
 }
 
 export default function Header() {
+	const { session } = useSupabase()
 	const [isScrolled, setIsScrolled] = useState(false)
 
 	useEffect(() => {
@@ -66,7 +69,7 @@ export default function Header() {
 						<Logo />
 					</div>
 					<nav className="hidden md:flex items-center space-x-4">
-						<NavLinks />
+						<NavLinks isLoggedIn={!!session} />
 					</nav>
 					<Sheet>
 						<SheetTrigger asChild>
@@ -77,7 +80,7 @@ export default function Header() {
 						</SheetTrigger>
 						<SheetContent side="right" className="w-[300px] sm:w-[400px]">
 							<nav className="mt-6">
-								<NavLinks isMobile />
+								<NavLinks isMobile isLoggedIn={!!session} />
 							</nav>
 						</SheetContent>
 					</Sheet>
