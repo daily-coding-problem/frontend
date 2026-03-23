@@ -8,9 +8,6 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { useSupabase } from '@/hooks/useSupabase'
 
-// TODO - Only show the premium button if the user is not logged in or is not a premium user
-// TODO - Show profile button if the user is logged in
-
 const Logo: React.FC = () => (
 	<a href="/" className="flex items-center space-x-2 text-xl font-semibold text-black">
 		<svg width="40" height="40" viewBox="0 0 75 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-indigo-600">
